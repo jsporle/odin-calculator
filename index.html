@@ -37,7 +37,7 @@
             numBtnCont.classList.add("num-buttons-container");
             buttonsCont.appendChild(numBtnCont);
 
-            const numberButtons = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const numberButtons = [`.`, 0, `AC`, 1, 2, 3, 4, 5, 6, 7, 8, 9];
             [...numberButtons].reverse().forEach((item) => {
                 const numBtn = document.createElement("button");
                 numBtn.textContent = item;
@@ -70,14 +70,46 @@
             //operation listener
             opBtnCont.addEventListener("click", (clickOperation) => {
                 if (clickOperation.target.tagName === 'BUTTON') {
-                    dispInput.textContent += clickOperation.target.textContent;
+                    const op = clickOperation.target.textContent;
+                    const currentDisplay = dispInput.textContent;
+                    const lastEntry = currentDisplay.slice(-1);
+
+                    const isLastEntryNumber = lastEntry >= '0' && lastEntry <= '9';
+
+                    if (op === '*' || op === '/') {        //multiply and divide can't be used unless a number is already on the display 
+                        if (isLastEntryNumber) {
+                            dispInput.textContent += op;
+                        }
+                    } else if (op === '=') {
+                        //equals button will update output display
+                        const outputSend = calculateInput(dispInput.textContent);
+                        dispOutput.textContent = outputSend;
+                        //equals button will repeat the last operation if hit again
+                    } else {
+                    dispInput.textContent += op;
+                    }
                 }
-            })
+            });
 
-            //multiply and divide can't be used unless a number is already on the display 
+            //input cleaning, send to output
+            function calculateInput(input) {
+                let cleanInput = input
+                .replaceAll('++', '+')
+                .replaceAll('--', '+')
+                .replaceAll('+-', '-')
+                .replaceAll('-+', '-');
 
-            //equals button will update output display
-                //equals button will repeat the last operation if hit again
+                try {
+                    const calculation = new Function(`return ${cleanInput}`)();
+                    return calculation; 
+                } catch (error) {
+                    return "ERROR!";
+                };
+            };
+
+            
+
+            
             //AC button will clear the display
             //DEL button will remove the last character
             //keyboard can be used
