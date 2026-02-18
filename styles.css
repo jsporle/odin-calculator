@@ -32,8 +32,34 @@
 
 .num-buttons-container, .op-buttons-container {
     display: flex;
-    flex: 1;
-    min-height: 50px;
+    gap: 10px;
     margin: 5px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
+
+    .num-buttons-container {
+        flex: 0 0 70%;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+        .num-buttons-container button {
+            font-size: 50px;
+            flex: 0 0 calc(33.33% - 6.67px);
+            box-sizing: border-box;
+            border-radius: 50%;
+        }
+
+    .op-buttons-container {
+        flex: 1;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+        .op-buttons-container button {
+            font-size: 50px;
+            width: 100%;
+            flex: 1;
+            border-radius: 10%;
+        }

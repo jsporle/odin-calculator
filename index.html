@@ -36,10 +36,27 @@
             const numBtnCont = document.createElement("div");
             numBtnCont.classList.add("num-buttons-container");
             buttonsCont.appendChild(numBtnCont);
+
+            const numberButtons = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            [...numberButtons].reverse().forEach((item) => {
+                const numBtn = document.createElement("button");
+                numBtn.textContent = item;
+                numBtn.className = "integer";
+                numBtnCont.appendChild(numBtn);
+            })
+
                 //operation buttons
             const opBtnCont = document.createElement("div");
             opBtnCont.classList.add("op-buttons-container");
             buttonsCont.appendChild(opBtnCont);
+
+            const operationButtons = ["+", "-", "*", "/", "="];
+            operationButtons.forEach((item) => {
+                const opBtn = document.createElement("button");
+                opBtn.textContent = item;
+                opBtn.className = "operation";
+                opBtnCont.appendChild(opBtn);
+            })
 
         //buttons update display
             //input buttons will add to input display string
