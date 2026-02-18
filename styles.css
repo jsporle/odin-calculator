@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 .calc-container {
     width: 500px;
     height: 600px;
@@ -18,6 +20,12 @@
 
 .disp-input, .disp-output {
     display: flex;
+    align-items: center;
+    justify-content: end;
+    font-family: "Bitcount Grid Double", sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 7px;
     flex: 1;
     border: 2px solid black;
 }
@@ -34,7 +42,6 @@
     display: flex;
     gap: 10px;
     margin: 5px;
-    /* border: 1px solid black; */
 }
 
     .num-buttons-container {
@@ -45,6 +52,7 @@
     }
 
         .num-buttons-container button {
+            font-family: "Rubik", sans-serif;
             font-size: 50px;
             flex: 0 0 calc(33.33% - 6.67px);
             box-sizing: border-box;
@@ -58,6 +66,7 @@
     }
 
         .op-buttons-container button {
+            font-family: "Rubik", sans-serif;
             font-size: 50px;
             width: 100%;
             flex: 1;

@@ -60,6 +60,12 @@
 
         //buttons update display
             //input buttons will add to input display string
+            //number listener
+            numBtnCont.addEventListener("click", (clickNumber) => {
+                if (clickNumber.target.tagName === 'BUTTON') {
+                    dispInput.textContent += clickNumber.target.textContent;
+                }
+            });
             //equals button will update output display
                 //equals button will repeat the last operation if hit again
             //AC button will clear the display
