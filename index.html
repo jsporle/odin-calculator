@@ -66,6 +66,16 @@
                     dispInput.textContent += clickNumber.target.textContent;
                 }
             });
+
+            //operation listener
+            opBtnCont.addEventListener("click", (clickOperation) => {
+                if (clickOperation.target.tagName === 'BUTTON') {
+                    dispInput.textContent += clickOperation.target.textContent;
+                }
+            })
+
+            //multiply and divide can't be used unless a number is already on the display 
+
             //equals button will update output display
                 //equals button will repeat the last operation if hit again
             //AC button will clear the display
