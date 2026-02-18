@@ -2,14 +2,29 @@
     width: 500px;
     height: 600px;
     display: flex;
+    flex-flow: column;
     border: 1px solid black;
     padding: 25px;
 }
 
 .disp-container {
     display: flex;
-    flex: 1;
-    align-items: center;
+    flex-flow: column;
     background-color: rgb(159, 193, 159);
     height: 100px;
+    padding: 2px;
+    margin: 0;
+}
+
+.disp-input, .disp-output {
+    display: flex;
+    flex: 1;
+    border: 2px solid black;
+}
+
+.buttons-container {
+    display: flex;
+    flex: 1 1;
+    margin: 15px 0px;
+    border: 1px solid black;
 }

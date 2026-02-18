@@ -19,11 +19,21 @@
         dispCont.classList.add("disp-container");
         calcCont.appendChild(dispCont);
                 //input display
+            const dispInput = document.createElement("div");
+            dispInput.classList.add("disp-input");
+            dispCont.appendChild(dispInput);
                 //output display
+            const dispOutput = document.createElement("div");
+            dispOutput.classList.add("disp-output");
+            dispCont.appendChild(dispOutput);
         
         //create buttons
             //buttons container
+        const buttonsCont = document.createElement("div");
+        buttonsCont.classList.add("buttons-container");
+        calcCont.appendChild(buttonsCont);
                 //numerical buttons
+                
                 //operation buttons
 
         //buttons update display
