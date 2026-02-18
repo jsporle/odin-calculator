@@ -33,8 +33,13 @@
         buttonsCont.classList.add("buttons-container");
         calcCont.appendChild(buttonsCont);
                 //numerical buttons
-                
+            const numBtnCont = document.createElement("div");
+            numBtnCont.classList.add("num-buttons-container");
+            buttonsCont.appendChild(numBtnCont);
                 //operation buttons
+            const opBtnCont = document.createElement("div");
+            opBtnCont.classList.add("op-buttons-container");
+            buttonsCont.appendChild(opBtnCont);
 
         //buttons update display
             //input buttons will add to input display string

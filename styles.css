@@ -25,6 +25,15 @@
 .buttons-container {
     display: flex;
     flex: 1 1;
-    margin: 15px 0px;
+    flex-flow: row;
+    border: 1px solid black;
+    margin: 10px 0px;
+}
+
+.num-buttons-container, .op-buttons-container {
+    display: flex;
+    flex: 1;
+    min-height: 50px;
+    margin: 5px;
     border: 1px solid black;
 }
