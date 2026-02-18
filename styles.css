@@ -3,4 +3,13 @@
     height: 600px;
     display: flex;
     border: 1px solid black;
+    padding: 25px;
+}
+
+.disp-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    background-color: rgb(159, 193, 159);
+    height: 100px;
 }
