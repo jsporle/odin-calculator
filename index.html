@@ -62,8 +62,14 @@
             //input buttons will add to input display string
             //number listener
             numBtnCont.addEventListener("click", (clickNumber) => {
-                if (clickNumber.target.tagName === 'BUTTON') {
+                const btnText = clickNumber.target.textContent;
+                if (clickNumber.target.tagName === 'BUTTON'
+                    && btnText !== `AC`
+                    && btnText !== `.`) {
                     dispInput.textContent += clickNumber.target.textContent;
+                } else if (btnText === `AC`) {
+                    dispInput.textContent = ``;
+                    dispOutput.textContent = ``;
                 }
             });
 
