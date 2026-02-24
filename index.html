@@ -78,12 +78,18 @@
                 }
 
                 else if ([`+`, `-`, `*`, `/`].includes(value)) {
+                    const isInvalid = currentOutput === "ERROR!" || currentOutput === "NaN" || currentOutput === "Infinity";
+
+                    if (isInvalid) {
+                        dispInput.textContent = ``;
+                        dispOutput.textContent = ``;
+                    } else {
                     dispInput.textContent = currentOutput + value;
                     isNewCalculation = false;
                     return;
+                    }
+                    isNewCalculation = false;
                 }
-                isNewCalculation = false;
-            }
 
             if (value === `AC` || value === 'Escape') {
                 dispInput.textContent = ``;
