@@ -33,6 +33,9 @@
     letter-spacing: 7px;
     flex: 1;
     border: 2px solid black;
+    overflow-x: auto;
+    white-space: nowrap;
+    word-break: break-all;
 }
 
 .buttons-container {
