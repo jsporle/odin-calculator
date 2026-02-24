@@ -8,6 +8,8 @@
 </head>
 <body>
     <script>
+        //set calculation condition
+        let isNewCalculation = false;
         //create calculator container
         const calcCont = document.createElement("div");
         calcCont.classList.add("calc-container");
@@ -63,8 +65,25 @@
 
         function handleInput(value) {
             const currentDisplay = dispInput.textContent;
+            const currentOutput = dispOutput.textContent;
             const lastEntry = currentDisplay.slice(-1);
             const isLastEntryNumber = lastEntry >= `0` && lastEntry <= `9`;
+
+            if (isNewCalculation) {
+                if (value >= '0' && value <= '9') {
+                    dispInput.textContent = value;
+                    dispOutput.textContent = currentOutput;
+                    isNewCalculation = false;
+                    return;
+                }
+
+                else if ([`+`, `-`, `*`, `/`].includes(value)) {
+                    dispInput.textContent = currentOutput + value;
+                    isNewCalculation = false;
+                    return;
+                }
+                isNewCalculation = false;
+            }
 
             if (value === `AC` || value === 'Escape') {
                 dispInput.textContent = ``;
@@ -77,6 +96,7 @@
 
             else if (value === `=` || value === `Enter`) {
                 dispOutput.textContent = calculateInput(currentDisplay);
+                isNewCalculation = true;
             }
 
             else if (value === `.`) {
