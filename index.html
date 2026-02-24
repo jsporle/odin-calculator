@@ -44,6 +44,11 @@
                 const numBtn = document.createElement("button");
                 numBtn.textContent = item;
                 numBtn.className = "integer";
+
+                if (item === 'AC') {
+                    numBtn.classList.add("ac-button");
+                }
+
                 numBtnCont.appendChild(numBtn);
             })
 
@@ -165,8 +170,6 @@
         };
         });
         
-       
-
             //input cleaning, send to output
             function calculateInput(input) {
                 let cleanInput = input.replace(/(^|[\+\-\*\/])0+(?=\d)/g, '$1');
@@ -183,20 +186,7 @@
                 } catch (error) {
                     return "ERROR!";
                 };
-            };
-
-            
-
-            
-            //AC button will clear the display
-            //DEL button will remove the last character
-            
-
-        //decimals can only be used once for each number (between each operational button)
-
-        
-        
-
+            };  
     </script>
     
 </body>
