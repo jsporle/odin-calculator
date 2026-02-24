@@ -137,7 +137,7 @@
             function calculateInput(input) {
                 let cleanInput = input.replace(/(^|[\+\-\*\/])0+(?=\d)/g, '$1');
                 
-                cleanInput = input
+                cleanInput = cleanInput
                 .replaceAll('++', '+')
                 .replaceAll('--', '+')
                 .replaceAll('+-', '-')
