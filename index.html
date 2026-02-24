@@ -113,11 +113,31 @@
             if (key.toLowerCase() === 'x') key = `*`;
 
             handleInput(key);
+
+             //allow visual feedback from keyboard input
+            const buttons = document.querySelectorAll("button");
+            const targetButton = Array.from(buttons).find(btn => {
+            if (key === "Enter") return btn.textContent === "=";
+            if (key === "Escape") return btn.textContent === "AC";
+            return btn.textContent === key;
+        });
+
+        if (targetButton) {
+            targetButton.classList.add("pressed");
+
+            setTimeout(() => {
+                targetButton.classList.remove("pressed");
+            }, 100);
+        };
         });
         
+       
+
             //input cleaning, send to output
             function calculateInput(input) {
-                let cleanInput = input
+                let cleanInput = input.replace(/(^|[\+\-\*\/])0+(?=\d)/g, '$1');
+                
+                cleanInput = input
                 .replaceAll('++', '+')
                 .replaceAll('--', '+')
                 .replaceAll('+-', '-')

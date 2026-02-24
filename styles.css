@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+.operation:active, .integer:active, .operation.pressed, .integer.pressed {
+    background-color: black;
+    color: white;
+}
+
 .calc-container {
     width: 500px;
     height: 600px;
